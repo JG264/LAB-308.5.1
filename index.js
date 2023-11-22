@@ -84,3 +84,36 @@ console.log(greeting);
   about the code.
 */
 
+const n1 = 10;
+const n2 = 15;
+const n3 = 20;
+const n4 = 5;
+
+// Check if all the numbers are divisible by 5
+const allDivisibleBy5 = n1 % 5 == 0 && n2 % 5 == 0 && n3 % 5 == 0 && n4 % 5== 0;
+
+// Check if the first number is larger than the last
+const isFirstLarger = n1 > n4;
+
+//  Arithmetic chain:
+const arithmeticResult = ((n1-n2)*n3)% n4;
+
+// Check if any number is over 25 without using the NOT operator
+const isOver25WithoutNot = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
+const isUnderOrEqualTo25 = !isOver25WithoutNot;
+
+// Rename the variable for clarity
+const isNotOver25 = isUnderOrEqualTo25;
+
+const isUnique = n1 !== n2 && n1 !== n3 && n1 !== n4 && n2 !== n3 && n2 !== n4 && n3 !== n4;
+
+const isValid = allDivisibleBy5 && isFirstLarger && isNotOver25 && isUnique;
+console.log(isValid);
+
+// Additional outputs for verification
+console.log("All numbers divisible by 5:", allDivisibleBy5);
+console.log("First number larger than the last:", isFirstLarger);
+console.log("Arithmetic chain result:", arithmeticResult);
+console.log("Is not over 25:", isNotOver25);
+
+
