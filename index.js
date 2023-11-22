@@ -117,3 +117,53 @@ console.log("Arithmetic chain result:", arithmeticResult);
 console.log("Is not over 25:", isNotOver25);
 
 
+/*
+You are planning a cross-country road trip!
+The distance of the trip, in total, is 1,500 miles.
+Your car’s fuel efficiency is as follows:
+At 55 miles per hour, you get 30 miles per gallon.
+At 60 miles per hour, you get 28 miles per gallon.
+At 75 miles per hour, you get 23 miles per gallon.
+You have a fuel budget of $175.
+The average cost of fuel is $3 per gallon.
+*/
+
+// Constants
+const totalDistance = 1500; // in miles
+const fuelBudget = 175; // in dollars
+const fuelCostPerGallon = 3; // in dollars
+const speeds = [55, 60, 75]; // in miles per hour
+const efficiencies = [30, 28, 23]; // in miles per gallon
+
+// Function to calculate fuel needed for a given speed
+const calculateFuelNeeded = (speed, efficiency) => totalDistance / efficiency;
+
+// Function to calculate trip duration for a given speed
+const calculateTripDuration = speed => totalDistance / speed;
+
+// Function to check if the budget is enough for a given speed
+const isBudgetEnough = (speed, efficiency) => {
+  const fuelNeeded = calculateFuelNeeded(speed, efficiency);
+  const fuelExpense = fuelNeeded * fuelCostPerGallon;
+  return fuelExpense <= fuelBudget;
+};
+
+// Log results for each speed
+for (let i = 0; i < speeds.length; i++) {
+  const speed = speeds[i];
+  const efficiency = efficiencies[i];
+
+  const fuelNeeded = calculateFuelNeeded(speed, efficiency);
+  const tripDuration = calculateTripDuration(speed);
+  const budgetEnough = isBudgetEnough(speed, efficiency);
+
+  console.log(`Results for ${speed} mph:`);
+  console.log(`  Gallons of fuel needed: ${fuelNeeded.toFixed(2)}`);
+  console.log(`  Trip duration: ${tripDuration.toFixed(2)} hours`);
+  console.log(`  Budget enough: ${budgetEnough}`);
+  console.log('------------------------');
+}
+
+
+
+
