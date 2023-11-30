@@ -42,3 +42,7 @@ function findNextPrime(n) {
 findNextPrime(4);
 findNextPrime(5);
 findNextPrime(9);
+
+
+// #Part 3 Feeling Loopy
+
