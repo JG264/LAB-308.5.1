@@ -33,3 +33,66 @@ for (let i = 0; i < dataArray2.length; i++) {
 }
 
 console.log(dataArray2);
+
+
+//Part 3: Transforming Data
+const csvString1 = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+
+const rows = csvString1.split('\n');
+const headings = rows.shift().split(',');
+
+const objectsArray = [];
+for (const row of rows) {
+    const values = row.split(',');
+    const object = {};
+    for (let i = 0; i < headings.length; i++) {
+        object[headings[i].toLowerCase()] = values[i];
+    }
+    objectsArray.push(object);
+}
+
+console.log(objectsArray);
+
+
+// Part 4: Sorting and Manipulating Data
+
+const data = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+];
+
+// Remove the last element
+data.pop();
+
+// Insert object at index 1
+data.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+
+// Add an object to the end
+data.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+// Calculate the average age
+let totalAge = 0;
+for (const obj of data) {
+    totalAge += parseInt(obj.age);
+}
+
+const averageAge = totalAge / data.length;
+
+console.log("Updated Data:");
+console.log(data);
+console.log("Average Age:", averageAge);
+
+
+//Part 5: Full Circle
+let csvData = "";
+for (const obj of data) {
+    const row = Object.values(obj).join(',');
+    csvData += row + '\n';
+}
+
+console.log("CSV Format:");
+console.log(csvData);
+
