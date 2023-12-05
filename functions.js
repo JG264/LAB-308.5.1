@@ -31,10 +31,3 @@ console.log(result);
     Bonus points if you ensure the function will work regardless of the casing of the planet being passed in ('earth', 'MARS', etc.).
     Invoke the function a couple of times to test it! */
 
-function planetHasWater(planet){
-    if(){
-
-    }else{
-        
-    }
-}
